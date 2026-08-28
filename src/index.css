@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-neon-cyan: #00d4aa;
+  --color-neon-purple: #b44fd4;
+  --color-neon-magenta: #ff007f;
+  --color-dark-bg: #020205;
+}
+
+/* Base custom styles */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  font-family: "Outfit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ========================================================
+   TEXT SIZE UTILITIES
+   ======================================================== */
+.text-xxs {
+  font-size: 0.65rem;
+  line-height: 1rem;
+}
+
+/* ========================================================
+   NEON GLOW UTILITIES
+   ======================================================== */
+.neon-glow-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 170, 0.4), 0 0 20px rgba(0, 212, 170, 0.2);
+}
+
+.neon-glow-text-purple {
+  text-shadow: 0 0 10px rgba(180, 79, 212, 0.4), 0 0 20px rgba(180, 79, 212, 0.2);
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 15px rgba(0, 212, 170, 0.3), inset 0 0 10px rgba(0, 212, 170, 0.1);
+  border: 1px solid rgba(0, 212, 170, 0.4);
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 15px rgba(180, 79, 212, 0.3), inset 0 0 10px rgba(180, 79, 212, 0.1);
+  border: 1px solid rgba(180, 79, 212, 0.4);
+}
+
+/* ========================================================
+   LAYOUT
+   ======================================================== */
+.full-page-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 5% 40px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ========================================================
+   TYPOGRAPHY
+   ======================================================== */
+.terminal-header {
+  font-size: clamp(28px, 4vw, 48px);
+  color: #00d4aa;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  font-family: "JetBrains Mono", monospace;
+  margin-bottom: 24px;
+}
+
+/* ========================================================
+   CARDS
+   ======================================================== */
+.cyber-card {
+  background: #111118;
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cyber-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 212, 170, 0.15), 0 0 15px rgba(0, 212, 170, 0.1);
+  border-color: rgba(0, 212, 170, 0.5);
+}
+
+/* ========================================================
+   DIVIDER
+   ======================================================== */
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 170, 0.3) 30%, rgba(180, 79, 212, 0.3) 70%, transparent 100%);
+}
+
+/* ========================================================
+   BACKGROUND UTILITIES
+   ======================================================== */
+
+/* DOT GRID BACKGROUND PANNING ANIMATION */
+@keyframes gridPan {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 24px 24px; }
+}
+
+.dot-grid-bg-animated {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(0, 212, 170, 0.07) 1px, transparent 1px);
+  animation: gridPan 30s linear infinite;
+}
+
+/* Futuristic background with radial gradient and SVG noise for depth */
+.hero-bg-glow {
+  background-color: #0a0a0f;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 212, 170, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(180, 79, 212, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #0a0a0f 0%, #020205 100%);
+  position: relative;
+}
+
+.hero-bg-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* ========================================================
+   GLASS & HOLOGRAM PANELS
+   ======================================================== */
+.neon-border-magenta {
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.3), inset 0 0 10px rgba(255, 0, 127, 0.1);
+  border: 1px solid rgba(255, 0, 127, 0.4);
+}
+
+.glass-panel {
+  background: rgba(8, 8, 16, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hologram-panel {
+  position: relative;
+  overflow: hidden;
+  background: rgba(6, 12, 24, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.08);
+}
+
+.hologram-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 240, 255, 0.15) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.hologram-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+  animation: scan 4s linear infinite;
+  z-index: 11;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% { top: -5%; }
+  100% { top: 105%; }
+}
+
+/* ========================================================
+   3D CARD TILT
+   ======================================================== */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-inner {
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d-front, .card-3d-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-3d-back {
+  transform: rotateY(180deg);
+}
+
+/* ========================================================
+   SCROLLBAR UTILITIES
+   ======================================================== */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6);
+}
+
+/* ========================================================
+   ANIMATIONS
+   ======================================================== */
+
+/* Pulse glow for active nav items */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 2px rgba(0, 240, 255, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.8));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Achievement burst card styles */
+.burst-active {
+  animation: burstShake 0.4s ease-out;
+}
+
+@keyframes burstShake {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05) rotate(2deg); }
+  50% { transform: scale(0.95) rotate(-2deg); }
+  70% { transform: scale(1.02) rotate(1deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* Project card tab-switch fade */
+@keyframes projectCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.project-card-enter {
+  animation: projectCardEnter 0.4s ease-out forwards;
+}
+
+/* Skill bar fill animation */
+@keyframes skillBarGrow {
+  from { width: 0%; }
+}
+
+.skill-bar-fill {
+  animation: skillBarGrow 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
