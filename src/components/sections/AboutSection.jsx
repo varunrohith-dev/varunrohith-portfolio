@@ -32,8 +32,8 @@ export function AboutSection() {
 
           {/* Large Name */}
           <h1 
-            className="text-white font-extrabold leading-none uppercase select-none tracking-tight"
-            style={{ fontSize: 'clamp(48px, 7vw, 88px)' }}
+            className="text-white font-extrabold leading-none uppercase select-none tracking-tight whitespace-nowrap"
+            style={{ fontSize: 'clamp(28px, 4.2vw, 56px)' }}
           >
             VARUN ROHITH K V
           </h1>
