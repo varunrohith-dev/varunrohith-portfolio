@@ -107,20 +107,15 @@ export function SkillsSection() {
               </h3>
 
               {/* Skills list with progress bars */}
-              <div className="space-y-3 pt-1">
+              <div className="space-y-4 pt-1">
                 {cat.skills.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="inline-flex items-center gap-1.5 text-xxs font-mono text-slate-300">
-                        <span>{skill.icon}</span>
-                        <span>{skill.name}</span>
-                      </span>
-                      <span className="text-[9px] font-mono font-bold" style={{ color: cat.accentColor }}>
-                        {skill.pct}%
-                      </span>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-base">{skill.icon}</span>
+                      <span className="text-sm font-mono font-bold text-slate-200">{skill.name}</span>
                     </div>
                     {/* Progress bar track */}
-                    <div className="w-full h-1 bg-slate-900 rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full skill-bar-fill"
                         style={{

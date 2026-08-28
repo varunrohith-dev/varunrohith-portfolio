@@ -116,7 +116,7 @@ export function AboutSection() {
               </svg>
             </a>
             <a
-              href="mailto:rohithvarun559@gmail.com"
+              href="mailto:varunrohith.dev@gmail.com"
               className="w-8 h-8 rounded-full border border-slate-800 bg-slate-950/80 flex items-center justify-center text-slate-400 hover:text-[#ff007f] hover:border-[#ff007f]/50 transition-all duration-300"
               title="Email"
             >
@@ -145,8 +145,8 @@ export function AboutSection() {
             <div className="space-y-4 font-mono text-xs">
               <div>
                 <span className="block text-slate-500 text-[9px] uppercase tracking-wider mb-1">Direct Connection</span>
-                <a href="mailto:rohithvarun559@gmail.com" className="text-[#00d4aa] hover:underline font-bold text-sm block">
-                  rohithvarun559@gmail.com
+                <a href="mailto:varunrohith.dev@gmail.com" className="text-[#00d4aa] hover:underline font-bold text-sm block">
+                  varunrohith.dev@gmail.com
                 </a>
               </div>
 
