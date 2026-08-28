@@ -76,7 +76,7 @@ export function AboutSection() {
               Get In Touch
             </button>
             <a
-              href="https://github.com/varunrohith-dev"
+              href="https://drive.google.com/file/d/1gP1YyeWyQ8knm2bOmmzSFza_DFrYaZ5l/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3 bg-slate-900/60 text-slate-300 border border-slate-700 hover:text-white hover:border-slate-500 rounded-lg text-xs font-bold tracking-widest uppercase transition-all duration-300 cursor-pointer flex items-center gap-2"
